@@ -34,7 +34,7 @@ def solve(board, step_counter):
                         if solve(board, step_counter):
                             return True
                         board[row][col] = 0
-                        solving_steps.append((row, col, 0))  # Backtrack
+                        solving_steps.append((row, col, 0))
                 return False
     return True
 
@@ -77,7 +77,6 @@ def animate_solving(steps, original_puzzle):
         counter_text.set_text(f"Step: {frame + 1}")
         return table,
 
-    # Dynamic animation speed
     num_steps = len(steps)
     if num_steps < 200:
         interval = 100
@@ -109,6 +108,7 @@ def main():
         print("\nSolved Board:\n")
         print_board(puzzle_copy)
         animate_solving(solving_steps, puzzle)
+        print("\n")
     else:
         print("No solution found.")
 
